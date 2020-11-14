@@ -2,9 +2,22 @@
 @import 'assets/styles/theme.scss';
 
 
-html, body {
+html, body, div {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
-  color: color(grey, text);
-  font-size: normal;
+  color: color(grey, default-text);
+  font-size: medium;
   font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: color(warning, base);
+  font-weight: 500;
+}
+
+a:hover{
+  text-decoration: underline;
+  color: color(warning, base);
+  font-weight: bold;
 }

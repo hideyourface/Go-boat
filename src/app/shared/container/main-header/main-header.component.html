@@ -1,0 +1,19 @@
+<div  *ngFor="let block of blocks" [class]="block.title"
+      [style.grid-template-columns]="block.cols"
+      [style.grid-template-rows]="block.rows"
+      class="main-header"
+      >
+      <div *ngFor="let item of items"
+      [style.grid-column-start]="item.grid_column_start"
+      [style.grid-column-end]="item.grid_column_end"
+      [style.grid-row-start]="item.grid_row_start"
+      [style.grid-row-end]="item.grid_row_end"
+      [class]="item.title"
+      class="main-header__item">
+        <img *ngIf="item.title === 'logo'" src="../../../../assets/img/logo.png" height="30px">
+        <a class="main-header__item-rigth"  href="#">
+          <fa-icon class="main-header__item-rigth" *ngIf="item.title === 'mobile-menu'" [icon]="faPlusSquare"></fa-icon>
+          <span class="main-header__item-rigth" *ngIf="item.title === 'desktop-menu'"> Add your boat </span>
+         </a>
+      </div>
+</div>

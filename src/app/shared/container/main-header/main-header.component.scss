@@ -1,0 +1,12 @@
+.main-header {
+  display: inline-grid;
+  width: 100%;
+  .main-header__item {
+    padding: 10px;
+  }
+  .main-header__item-rigth {
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+}
