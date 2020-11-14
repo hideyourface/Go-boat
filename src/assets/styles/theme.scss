@@ -1,0 +1,44 @@
+/* Colors definition */
+$palette: (
+    primary: (
+        base:    #1ABC9C,
+        light:   #5cd4bc,
+        lighter: #96e4d4
+    ),
+    accent: (
+        base:   #4A9FF4,
+        light:  #70b1f3
+    ),
+    warning: (
+        base: #EE1F91,
+    ),
+    grey: (
+        heavy-text: #383c40,
+        text: #343A40,
+        light-text: #868E96,
+        lighter-text: #C1C1C1,
+        heavy-shadow: rgba(0,0,0,0.09),
+        light-shadow: rgba(0,0,0,0.05),
+    )
+);
+
+/* function that will be used in scss to pick colors */
+@function color($color,$tone){
+  @if map-has-key($palette,$color){
+      $color: map-get($palette,$color);
+
+          @if map-has-key($color,$tone){
+              $tone: map-get($color,$tone);
+              @return $tone;
+          }
+
+          @warn "unknown tone `#{$tone}` in color";
+          @return null;
+  }
+
+  @warn "unknown color `#{$color}` in palette";
+  @return null;
+
+}
+
+

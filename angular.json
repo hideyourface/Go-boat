@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "click-and-boat"
+    }
+  },
+  "defaultProject": "click-and-boat",
+  "cli": {
+    "analytics": "6b9ea39d-16c9-4c15-858f-63ffb3fcbe40"
+  }
 }

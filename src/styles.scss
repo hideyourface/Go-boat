@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Palette global definition */
+@import 'assets/styles/theme.scss';
+
+
+html, body {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: color(grey, text);
+  font-size: normal;
+  font-weight: normal;
+}
