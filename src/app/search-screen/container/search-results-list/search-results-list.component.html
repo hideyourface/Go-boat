@@ -1,1 +1,15 @@
-<p>search-results-list works!</p>
+<div class="search__results">
+    <div class="search__boat-card" *ngFor="let boat of boatList">
+      <div class="boat-card__img">
+        <div class="boat-card__img--hover">
+          Aucune photo disponible </div>
+      </div>
+      <div class="boat-card__info">
+
+          <p>{{boat['boatType']}}</p>
+          <label>LOUEUR </label>
+          <span>{{boat['userType']}}</span>
+      </div>
+    </div>
+
+</div>

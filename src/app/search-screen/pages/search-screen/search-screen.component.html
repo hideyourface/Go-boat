@@ -1,4 +1,20 @@
+<div class="search-screen__container">
 <app-main-header></app-main-header>
-<app-search-header></app-search-header>
-<app-search-container></app-search-container>
-<app-search-results-list></app-search-results-list>
+<div class="grid__container" *ngFor="let block of blocks"
+  [class]="block.title"
+  [style.grid-template-columns]="block.cols"
+  [style.grid-template-rows]="block.rows">
+  <ng-container *ngFor="let item of items"
+  [style.grid-column-start]="item.grid_column_start"
+  [style.grid-column-end]="item.grid_column_end"
+  [style.grid-row-start]="item.grid_row_start"
+  [style.grid-row-end]="item.grid_row_end" >
+
+
+  <app-search-container *ngIf="item.title === 'search'"></app-search-container>
+  <app-search-results-list  *ngIf="item.title === 'results'"></app-search-results-list>
+
+</ng-container>
+</div>
+
+</div>

@@ -3,80 +3,80 @@
     <div [hidden]="currentStep['name'] !== 'intro'" class="input__container">
       <h4> Je suis: </h4>
         <div class="radio__container">
-          <input class="radio-input" type="radio" value="0" id="userType" name="userType" #userType ngModel/>
+          <input class="radio-input" type="radio" value="Particulier" id="userType" name="userType" #userType ngModel/>
           <label class="radio__label" for="userType"> Un particulier </label>
         </div>
         <div class="radio__container">
-          <input class="radio-input"  type="radio" value="1" id="userType" name="userType" #userType ngModel/>
+          <input class="radio-input"  type="radio" value="Professionel" id="userType" name="userType" #userType ngModel/>
           <label class="radio__label"  for="userType"> Un professionel </label>
         </div>
     </div>
 
     <div [hidden]="currentStep['name'] !== 'chooseType'" class="input__container">
       <div class="radio__container">
-        <input  class="radio-input"  type="radio" value="Voilier" id="boatType" name="boatType" #boatType ngModel/>
+        <input  class="radio-input"  type="radio" value="sailBoat" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Voilier </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="Catamaran" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="catamaran" id="boatType" name="boatType" #boatType ngModel/>
         <label  class="radio__label" for="boatType"> Catamaran </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"   type="radio" value="Bateau moteur" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"   type="radio" value="bateau moteur" id="boatType" name="boatType" #boatType ngModel/>
         <label  class="radio__label" for="boatType"> Bateau moteur </label>
       </div>
 
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="Semi-rigide" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="semi-rigide" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Semi-rigide </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="Péniche" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="péniche" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Péniche </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="Jet-Ski" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="jet-Ski" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Jet-Ski </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="Yatch" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="yatch" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Yatch </label>
       </div>
     </div>
 
     <div [hidden]="currentStep['name'] !== 'catamaran' && currentStep['name'] !== 'sailBoat'"  class="input__container">
       <div class="text-input__container">
-        <label class="text-input__label"   for="Longueur"> Longueur </label>
-        <input class="text-input" type="text" placeholder="0" id="Longueur" name="Longueur" #Longueur ngModel/>
+        <label class="text-input__label"   for="longueur"> Longueur </label>
+        <input class="text-input" type="text" placeholder="0" id="longueur" name="longueur" #longueur ngModel/>
       </div>
       <div class="text-input__container">
-        <label  class="text-input__label" for="Largeur"> Largeur </label>
-        <input  class="text-input"  type="text" placeholder="0" id="Largeur" name="Largeur" #Largeur ngModel/>
+        <label  class="text-input__label" for="largeur"> Largeur </label>
+        <input  class="text-input"  type="text" placeholder="0" id="largeur" name="largeur" #largeur ngModel/>
       </div>
       <div class="text-input__container">
-        <label  class="text-input__label" for="Tirant"> Tirant d'eau </label>
-        <input   class="text-input" type="text" placeholder="0" id="Tirant" name="Tirant" #Tirant ngModel/>
+        <label  class="text-input__label" for="tirant"> Tirant d'eau </label>
+        <input   class="text-input" type="text" placeholder="0" id="tirant" name="tirant" #tirant ngModel/>
       </div>
 
-      <div class="radio__container"  [hidden]="currentStep['name'] === 'sailBoat'">
-        <input class="radio-input" type="checkbox" id="Foil" name="Foil" #Foil ngModel/>
-        <label class="radio__label" for="userType"> Foil </label>
+      <div class="radio__container"  [hidden]="currentStep['name'] !== 'sailBoat'">
+        <input class="radio-input" type="checkbox" id="foil" name="foil" #foil ngModel/>
+        <label class="radio__label" for="foil"> Foil </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input" type="checkbox" id="Equipage" name="Equipage" #Equipage ngModel/>
-        <label class="radio__label"  for="Equipage"> Equipage </label>
+        <input class="radio-input" type="checkbox" id="equipage" name="equipage" #equipage ngModel/>
+        <label class="radio__label"  for="equipage"> Equipage </label>
       </div>
 
       <div class="radio__container">
-        <label  class="radio-input"  for="Annexe"> Annexe </label>
-        <input  class="radio-input" type="checkbox" id="Annexe" name="Annexe" #Annexe ngModel/>
+        <input  class="radio-input" type="checkbox" id="annexe" name="annexe" #annexe ngModel/>
+        <label  class="radio__label"  for="annexe"> Annexe </label>
       </div>
 
     </div>

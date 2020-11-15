@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceControllerService } from 'src/app/shared/services/device-controller.service';
 
 @Component({
   selector: 'app-search-container',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-container.component.scss']
 })
 export class SearchContainerComponent implements OnInit {
-
-  constructor() { }
+  public isMobile = true;
+  constructor(private deviceService : DeviceControllerService) {
+    if(!this.deviceService.deviceService.isMobile()){
+      this.isMobile = false;
+    }
+  }
 
   ngOnInit(): void {
   }

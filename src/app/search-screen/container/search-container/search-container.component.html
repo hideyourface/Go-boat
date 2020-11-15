@@ -1,1 +1,65 @@
-<p>search-container works!</p>
+<div class="search__container">
+  <p (click)="searchForm.hidden = !searchForm.hidden">Parametre de recherche</p>
+  <div #searchForm [hidden]="isMobile === true">
+    <p (click)="userType.hidden = !userType.hidden">Type de loueur</p>
+    <div #userType >
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="Particulier" name="Particulier" #Particulier ngModel/>
+        <label class="radio__label"  for="Particulier"> Particulier </label>
+      </div>
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="Professionel" name="Professionel" #Professionel ngModel/>
+        <label class="radio__label"  for="Professionel"> Professionel </label>
+      </div>
+  </div>
+
+  <div>
+    <p (click)="boatType.hidden = !boatType.hidden">Type de bateau</p>
+    <div #boatType >
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="Catamaran" name="Catamaran" #Catamaran ngModel/>
+        <label class="radio__label"  for="Catamaran"> Catamaran </label>
+      </div>
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="Voilier" name="Voilier" #Voilier ngModel/>
+        <label class="radio__label"  for="Voilier"> Voilier </label>
+      </div>
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="Peniche" name="Peniche" #Peniche ngModel/>
+        <label class="radio__label"  for="Peniche"> Péniche </label>
+      </div>
+  </div>
+</div>
+
+<div [hidden]="!Voilier.checked && !Catamaran.checked">
+  <p (click)="extraInfo.hidden = !extraInfo.hidden">Informations adjuntives</p>
+  <div #extraInfo>
+  <div class="text-input__container" >
+    <label class="text-input__label"   for="Longueur"> Longueur </label>
+    <input class="text-input" type="text" placeholder="0" id="Longueur" name="Longueur" #Longueur ngModel/>
+  </div>
+  <div class="text-input__container">
+    <label  class="text-input__label" for="Largeur"> Largeur </label>
+    <input  class="text-input"  type="text" placeholder="0" id="Largeur" name="Largeur" #Largeur ngModel/>
+  </div>
+  <div class="text-input__container">
+    <label  class="text-input__label" for="Tirant"> Tirant d'eau </label>
+    <input   class="text-input" type="text" placeholder="0" id="Tirant" name="Tirant" #Tirant ngModel/>
+  </div>
+
+  <div class="radio__container">
+    <input class="radio-input" type="checkbox" id="Foil" name="Foil" #Foil ngModel/>
+    <label class="radio__label" for="userType"> Foil </label>
+  </div>
+
+  <div class="radio__container">
+    <input class="radio-input" type="checkbox" id="Equipage" name="Equipage" #Equipage ngModel/>
+    <label class="radio__label"  for="Equipage"> Equipage </label>
+  </div>
+
+  <div class="radio__container">
+    <input  class="radio-input" type="checkbox" id="Annexe" name="Annexe" #Annexe ngModel/>
+    <label  class="radio__label"  for="Annexe"> Annexe </label>
+  </div>
+</div>
+</div>

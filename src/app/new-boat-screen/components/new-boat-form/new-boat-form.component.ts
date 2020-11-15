@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { RegisterBoatService } from 'src/app/shared/services/register-boat.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-new-boat-form',
@@ -13,7 +14,7 @@ export class NewBoatFormComponent implements OnInit {
   public steps : object[];
   @Output() changeStep : EventEmitter<string> = new EventEmitter();
 
-  constructor(private registration : RegisterBoatService) {
+  constructor(private registration : RegisterBoatService, private http : HttpClient) {
     this.steps = this.registration.steps;
    }
 
@@ -23,11 +24,13 @@ export class NewBoatFormComponent implements OnInit {
   onSubmit(f : NgForm){
     this.form = f.value;
     console.log('this.form', this.form );
-
+    this.http.post('https://click-and-boat-11f09.firebaseio.com/boats.json', this.form).subscribe(responseData => {
+      console.log('responseData', responseData)
+    });
   }
 
   nextStep(f : NgForm){
     console.log('f.value', f.value );
-    this.changeStep.emit();
+    this.changeStep.emit(f.value);
   }
 }

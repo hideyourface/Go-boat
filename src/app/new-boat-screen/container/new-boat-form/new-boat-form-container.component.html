@@ -20,7 +20,7 @@
           </div >
         </ng-container>
 
-        <app-new-boat-form [currentStep]="currentStep" (changeStep)="nextStep()" *ngIf="item.title === 'form'"></app-new-boat-form>
+        <app-new-boat-form [currentStep]="currentStep" (changeStep)="nextStep($event)" *ngIf="item.title === 'form'"></app-new-boat-form>
 
 
         <a *ngIf="item.title === 'footer-link'" class="light-link" >

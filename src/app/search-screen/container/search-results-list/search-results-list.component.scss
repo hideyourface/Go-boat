@@ -1,0 +1,56 @@
+@import '../../../../assets/styles/theme.scss';
+.search__boat-card{
+  float: left;
+  width: 30%;
+  height: 280px;
+  margin: 10px 1%;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 3px 3px color(grey,   heavy-shadow);
+  -webkit-box-shadow: 0 0 3px 3px color(grey,  heavy-shadow);
+  box-shadow: 0 0 3px 3px color(grey,  heavy-shadow);
+  .boat-card__img{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 180px;
+    background : color(primary, lighter);
+    background-image : url('../../../../assets/img/search-screen/provide-default.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+    position: relative;
+    z-index: 0;
+    opacity: 0.6;
+  }
+  .boat-card__img--hover{
+    height: 100px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background : color(grey, heavy-shadow);
+    color: #fff;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    padding-top:80px;
+  }
+  .boat-card__info{
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 795px) {
+  /* For mobile phones: */
+  .search__boat-card{
+    width: 90%;
+    margin: 10px 5%;
+  }
+}
+
+@media only screen and (min-width: 796px) and (max-width: 1200px){
+  /* For tablet and small screen: */
+  .search__boat-card{
+    width: 44%;
+    margin: 10px 3%;
+  }
+}

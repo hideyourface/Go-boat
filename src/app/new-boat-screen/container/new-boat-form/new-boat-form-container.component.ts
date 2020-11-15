@@ -4,6 +4,7 @@ import { Blocks } from 'src/app/shared/interfaces/blocks.Blocks';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { RegisterBoatService } from 'src/app/shared/services/register-boat.service'
+import { DeviceControllerService } from 'src/app/shared/services/device-controller.service';
 
 @Component({
   selector: 'app-new-boat-form-container',
@@ -54,23 +55,32 @@ export class NewBoatFormContainerComponent implements OnInit {
 
 
 
-  constructor(private registration : RegisterBoatService, ) { }
+  constructor(private registration : RegisterBoatService, private deviceService : DeviceControllerService) { }
 
   ngOnInit(): void {
     this.formStep = this.registration.currentStep.subscribe(value => this.currentStep = value);
     console.log('this.currentStep --->', this.currentStep);
-
   }
 
   ngOnDestroy(){
     this.formStep.unsubscribe();
   }
 
-  nextStep(){
-    console.log('nextStep');
+  nextStep(f : object){
+    console.log('current ---> ',  this.currentStep['number']);
     if(this.currentStep['name'] !== 'confirmation'){
-      this.registration.setCurrentStep(this.currentStep['number']);
-      this.blocks[this.blocks.findIndex(element => element.title === 'new-boat-header')].rows =  '15% 5% 72% 3%';
+        if(this.currentStep['number'] === 1 && f['boatType'] === 'sailBoat'){
+          this.registration.setCurrentStep(2);
+        } else if(this.currentStep['number'] === 1 && (f['boatType'] !== 'sailBoat' && f['boatType'] !== 'catamaran') ||
+                  this.currentStep['number'] === 2) {
+                    this.registration.setCurrentStep(3);
+        } else this.registration.setCurrentStep(this.currentStep['number']);
+
+      if(this.deviceService.deviceService.isMobile() || this.deviceService.deviceService.isTablet()) {
+        this.blocks[this.blocks.findIndex(element => element.title === 'new-boat-header')].rows =  '15% 5% auto 3%';
+      } else {
+        this.blocks[this.blocks.findIndex(element => element.title === 'new-boat-header')].rows =  '15% 5% 72% 3%';
+      }
     }
   }
 
