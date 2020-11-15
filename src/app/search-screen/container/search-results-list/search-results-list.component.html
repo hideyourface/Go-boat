@@ -1,4 +1,6 @@
-<div class="search__results">
+<p *ngIf="boatList.length === 0">
+  La recherche n'a renvoyé aucun résultat, veuillez réessayer</p>
+<div class="search__results" *ngIf="boatList.length > 0">
     <div class="search__boat-card" *ngFor="let boat of boatList">
       <div class="boat-card__img">
         <div class="boat-card__img--hover">

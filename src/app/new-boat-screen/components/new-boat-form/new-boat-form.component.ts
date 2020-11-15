@@ -24,7 +24,8 @@ export class NewBoatFormComponent implements OnInit {
   onSubmit(f : NgForm){
     this.form = f.value;
     console.log('this.form', this.form );
-    this.http.post('https://click-and-boat-11f09.firebaseio.com/boats.json', this.form).subscribe(responseData => {
+
+    this.http.post('http://localhost:3000/boat', this.form).subscribe(responseData => {
       console.log('responseData', responseData)
     });
   }

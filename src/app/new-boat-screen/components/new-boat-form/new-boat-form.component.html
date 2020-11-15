@@ -3,18 +3,18 @@
     <div [hidden]="currentStep['name'] !== 'intro'" class="input__container">
       <h4> Je suis: </h4>
         <div class="radio__container">
-          <input class="radio-input" type="radio" value="Particulier" id="userType" name="userType" #userType ngModel/>
+          <input class="radio-input" type="radio" value="particulier" id="userType" name="userType" #userType ngModel/>
           <label class="radio__label" for="userType"> Un particulier </label>
         </div>
         <div class="radio__container">
-          <input class="radio-input"  type="radio" value="Professionel" id="userType" name="userType" #userType ngModel/>
+          <input class="radio-input"  type="radio" value="professionel" id="userType" name="userType" #userType ngModel/>
           <label class="radio__label"  for="userType"> Un professionel </label>
         </div>
     </div>
 
     <div [hidden]="currentStep['name'] !== 'chooseType'" class="input__container">
       <div class="radio__container">
-        <input  class="radio-input"  type="radio" value="sailBoat" id="boatType" name="boatType" #boatType ngModel/>
+        <input  class="radio-input"  type="radio" value="voilier" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Voilier </label>
       </div>
 
@@ -24,7 +24,7 @@
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"   type="radio" value="bateau moteur" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"   type="radio" value="bateau-moteur" id="boatType" name="boatType" #boatType ngModel/>
         <label  class="radio__label" for="boatType"> Bateau moteur </label>
       </div>
 
@@ -35,12 +35,12 @@
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="péniche" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="peniche" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Péniche </label>
       </div>
 
       <div class="radio__container">
-        <input class="radio-input"  type="radio" value="jet-Ski" id="boatType" name="boatType" #boatType ngModel/>
+        <input class="radio-input"  type="radio" value="jet-ski" id="boatType" name="boatType" #boatType ngModel/>
         <label class="radio__label"  for="boatType"> Jet-Ski </label>
       </div>
 
@@ -64,7 +64,7 @@
         <input   class="text-input" type="text" placeholder="0" id="tirant" name="tirant" #tirant ngModel/>
       </div>
 
-      <div class="radio__container"  [hidden]="currentStep['name'] !== 'sailBoat'">
+      <div class="radio__container"  [hidden]="currentStep['name'] !== 'voilier'">
         <input class="radio-input" type="checkbox" id="foil" name="foil" #foil ngModel/>
         <label class="radio__label" for="foil"> Foil </label>
       </div>

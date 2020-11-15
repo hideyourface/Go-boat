@@ -69,9 +69,9 @@ export class NewBoatFormContainerComponent implements OnInit {
   nextStep(f : object){
     console.log('current ---> ',  this.currentStep['number']);
     if(this.currentStep['name'] !== 'confirmation'){
-        if(this.currentStep['number'] === 1 && f['boatType'] === 'sailBoat'){
+        if(this.currentStep['number'] === 1 && f['boatType'] === 'voilier'){
           this.registration.setCurrentStep(2);
-        } else if(this.currentStep['number'] === 1 && (f['boatType'] !== 'sailBoat' && f['boatType'] !== 'catamaran') ||
+        } else if(this.currentStep['number'] === 1 && (f['boatType'] !== 'voilier' && f['boatType'] !== 'catamaran') ||
                   this.currentStep['number'] === 2) {
                     this.registration.setCurrentStep(3);
         } else this.registration.setCurrentStep(this.currentStep['number']);

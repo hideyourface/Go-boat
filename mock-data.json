@@ -1,0 +1,26 @@
+{
+  "boat": [
+    {
+      "userType": "particulier",
+      "boatType": "voilier",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 1
+    },
+    {
+      "userType": "professionel",
+      "boatType": "catamaran",
+      "longueur": "12",
+      "largeur": "12",
+      "tirant": "12",
+      "foil": false,
+      "equipage": true,
+      "annexe": "",
+      "id": 2
+    }
+  ]
+}

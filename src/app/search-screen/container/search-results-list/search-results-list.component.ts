@@ -1,66 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators'
+import { Subscription } from 'rxjs';
+import { SearchServiceService } from 'src/app/shared/services/search-service.service';
 @Component({
   selector: 'app-search-results-list',
   templateUrl: './search-results-list.component.html',
   styleUrls: ['./search-results-list.component.scss']
 })
 export class SearchResultsListComponent implements OnInit {
+  public boatList : object[] = [];
+  private boatListSubscription : Subscription;
+  private query = '';
+  constructor(private search : SearchServiceService) {
+    this.search.getBoatsList('');
 
-  public boatList = [{
-    userType : 'Particulier',
-    boatType : 'Catamaran',
-    longeur : '15',
-    largeur : '20',
-    tirant : '2',
-    foil : false,
-    Equipage : true,
-    Annexe : false
-  },
-  {
-    userType : 'Particulier',
-    boatType : 'Bateau moteur',
-    longeur : '',
-    largeur : '',
-    tirant : '',
-    foil : false,
-    Equipage : false,
-    Annexe : false
-  },{
-    userType : 'Professionel',
-    boatType : 'Catamaran',
-    longeur : '25',
-    largeur : '10',
-    tirant : '5',
-    foil : false,
-    Equipage : true,
-    Annexe : true
-  },
-  {
-    userType : 'Professionel',
-    boatType : 'Jet-Ski',
-    longeur : '',
-    largeur : '',
-    tirant : '',
-    foil : false,
-    Equipage : false,
-    Annexe : false
-  },
-  {
-    userType : 'Particulier',
-    boatType : 'Voilier',
-    longeur : '12',
-    largeur : '5',
-    tirant : '4',
-    foil : true,
-    Equipage : true,
-    Annexe : true
   }
-
-]
-  constructor() { }
 
   ngOnInit(): void {
+    this.boatListSubscription = this.search.boatsList.subscribe(value =>{
+      this.boatList = value;
+    })
+   }
+
+
+  ngOnDestroy(){
+    this.boatListSubscription.unsubscribe();
   }
+
 
 }

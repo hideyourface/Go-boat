@@ -25,7 +25,7 @@ export class RegisterBoatService {
       button: 'Suivant'
     },{
       name : 'sailBoat',
-      title: 'Votre SailBoat',
+      title: 'Votre Voilier',
       number: 3,
       button: 'Suivant'
 

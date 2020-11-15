@@ -1,65 +1,103 @@
 <div class="search__container">
-  <p (click)="searchForm.hidden = !searchForm.hidden">Parametre de recherche</p>
-  <div #searchForm [hidden]="isMobile === true">
-    <p (click)="userType.hidden = !userType.hidden">Type de loueur</p>
-    <div #userType >
-      <div class="radio__container">
-        <input class="radio-input" type="checkbox" id="Particulier" name="Particulier" #Particulier ngModel/>
-        <label class="radio__label"  for="Particulier"> Particulier </label>
+  <p (click)="searchForm.hidden = !searchForm.hidden">  Paramètres de recherche</p>
+  <div  #searchForm [hidden]="isMobile === true">
+    <form  #searchBoat="ngForm" >
+    <div class="search__block">
+      <p (click)="userTypeContainer.hidden = !userTypeContainer.hidden">
+        <fa-icon [icon]="faChevronDown" [hidden]="userTypeContainer.hidden"></fa-icon>
+        <fa-icon [icon]="faChevronRight" [hidden]="!userTypeContainer.hidden"></fa-icon>
+        Type de loueur
+      </p>
+      <div #userTypeContainer >
+          <div class="radio__container">
+            <input class="radio-input" type="radio" value="particulier" id="userType" name="userType" #userType ngModel (change)="buildSearchQuery(searchBoat, 'userType')"/>
+            <label class="radio__label" for="userType"> Un particulier </label>
+          </div>
+          <div class="radio__container">
+            <input class="radio-input"  type="radio" value="professionel" id="userType" name="userType" #userType ngModel (change)="buildSearchQuery(searchBoat, 'userType')"/>
+            <label class="radio__label"  for="userType"> Un professionel </label>
+          </div>
       </div>
+    </div>
+  <div class="search__block">
+    <p (click)="boatTypeContainer.hidden = !boatTypeContainer.hidden">
+      <fa-icon [icon]="faChevronDown" [hidden]="!boatTypeContainer.hidden"></fa-icon>
+      <fa-icon [icon]="faChevronRight"  [hidden]="boatTypeContainer.hidden"></fa-icon>
+      Type de bateau</p>
+    <div #boatTypeContainer >
       <div class="radio__container">
-        <input class="radio-input" type="checkbox" id="Professionel" name="Professionel" #Professionel ngModel/>
-        <label class="radio__label"  for="Professionel"> Professionel </label>
+        <input  class="radio-input"  type="radio" value="voilier" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label class="radio__label"  for="boatType"> Voilier </label>
       </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="catamaran" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label  class="radio__label" for="boatType"> Catamaran </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"   type="radio" value="bateau-moteur" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label  class="radio__label" for="boatType"> Bateau moteur </label>
+      </div>
+
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="semi-rigide" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label class="radio__label"  for="boatType"> Semi-rigide </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="peniche" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label class="radio__label"  for="boatType"> Péniche </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="jet-ski" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label class="radio__label"  for="boatType"> Jet-Ski </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="yatch" id="boatType" name="boatType" #boatType ngModel (change)="buildSearchQuery(searchBoat, 'boatType')"/>
+        <label class="radio__label"  for="boatType"> Yatch </label>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <p (click)="boatType.hidden = !boatType.hidden">Type de bateau</p>
-    <div #boatType >
-      <div class="radio__container">
-        <input class="radio-input" type="checkbox" id="Catamaran" name="Catamaran" #Catamaran ngModel/>
-        <label class="radio__label"  for="Catamaran"> Catamaran </label>
+  <div class="search__block" [hidden]="boatType.value !==  'voilier' && boatType.value !==  'catamaran'">
+    <p (click)="extraInfo.hidden = !extraInfo.hidden">
+      <fa-icon [icon]="faChevronRight" [hidden]="extraInfo.hidden"></fa-icon>
+      <fa-icon [icon]="faChevronDown" [hidden]="!extraInfo.hidden"></fa-icon>
+      Informations adjuntives</p>
+    <div #extraInfo>
+      <div class="text-input__container" >
+        <label class="text-input__label"   for="longueur"> Longueur </label>
+        <input class="text-input" type="text" placeholder="0" id="longueur" name="longueur" #longueur ngModel (ngModelChange)="buildSearchQuery(searchBoat, 'longueur')"/>
       </div>
-      <div class="radio__container">
-        <input class="radio-input" type="checkbox" id="Voilier" name="Voilier" #Voilier ngModel/>
-        <label class="radio__label"  for="Voilier"> Voilier </label>
+      <div class="text-input__container">
+        <label  class="text-input__label" for="largeur"> Largeur </label>
+        <input  class="text-input"  type="text" placeholder="0" id="largeur" name="largeur" #largeur ngModel (ngModelChange)="buildSearchQuery(searchBoat, 'largeur')"/>
       </div>
-      <div class="radio__container">
-        <input class="radio-input" type="checkbox" id="Peniche" name="Peniche" #Peniche ngModel/>
-        <label class="radio__label"  for="Peniche"> Péniche </label>
+      <div class="text-input__container">
+        <label  class="text-input__label" for="tirant"> Tirant d'eau </label>
+        <input   class="text-input" type="text" placeholder="0" id="tirant" name="tirant" #Tirant ngModel (ngModelChange)="buildSearchQuery(searchBoat, 'tirant')"/>
       </div>
-  </div>
-</div>
 
-<div [hidden]="!Voilier.checked && !Catamaran.checked">
-  <p (click)="extraInfo.hidden = !extraInfo.hidden">Informations adjuntives</p>
-  <div #extraInfo>
-  <div class="text-input__container" >
-    <label class="text-input__label"   for="Longueur"> Longueur </label>
-    <input class="text-input" type="text" placeholder="0" id="Longueur" name="Longueur" #Longueur ngModel/>
-  </div>
-  <div class="text-input__container">
-    <label  class="text-input__label" for="Largeur"> Largeur </label>
-    <input  class="text-input"  type="text" placeholder="0" id="Largeur" name="Largeur" #Largeur ngModel/>
-  </div>
-  <div class="text-input__container">
-    <label  class="text-input__label" for="Tirant"> Tirant d'eau </label>
-    <input   class="text-input" type="text" placeholder="0" id="Tirant" name="Tirant" #Tirant ngModel/>
-  </div>
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="foil" name="foil" #foil ngModel (change)="buildSearchQuery(searchBoat, 'foil')"/>
+        <label class="radio__label" for="userType"> Foil </label>
+      </div>
 
-  <div class="radio__container">
-    <input class="radio-input" type="checkbox" id="Foil" name="Foil" #Foil ngModel/>
-    <label class="radio__label" for="userType"> Foil </label>
-  </div>
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="equipage" name="equipage" #equipage ngModel  (change)="buildSearchQuery(searchBoat, 'equipage')"/>
+        <label class="radio__label"  for="equipage"> Equipage </label>
+      </div>
 
-  <div class="radio__container">
-    <input class="radio-input" type="checkbox" id="Equipage" name="Equipage" #Equipage ngModel/>
-    <label class="radio__label"  for="Equipage"> Equipage </label>
+      <div class="radio__container">
+        <input  class="radio-input" type="checkbox" id="annexe" name="annexe" #annexe ngModel (change)="buildSearchQuery(searchBoat, 'annexe')"/>
+        <label  class="radio__label"  for="annexe"> Annexe </label>
+      </div>
+    </div>
   </div>
-
-  <div class="radio__container">
-    <input  class="radio-input" type="checkbox" id="Annexe" name="Annexe" #Annexe ngModel/>
-    <label  class="radio__label"  for="Annexe"> Annexe </label>
-  </div>
+</form>
 </div>
 </div>
