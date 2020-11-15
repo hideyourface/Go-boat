@@ -2,7 +2,7 @@
   <h3 class="search__container--title" (click)="searchForm.hidden = !searchForm.hidden">
     <fa-icon  [icon]="faSearch"></fa-icon>
     Paramètres de recherche</h3>
-  <div  #searchForm [hidden]="isMobile === true">
+  <div  #searchForm [hidden]="isMobile">
     <form  #searchBoat="ngForm" >
     <div class="search__block">
       <p (click)="userTypeContainer.hidden = !userTypeContainer.hidden">

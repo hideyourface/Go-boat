@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +40,7 @@ export class RegisterBoatService {
   ];
 
   public currentStep = new BehaviorSubject<object>(this.steps[0]);
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   setCurrentStep(step : number){
     if(step < this.steps.length){
@@ -46,5 +48,11 @@ export class RegisterBoatService {
     } else {
       this.currentStep.next(this.steps[0]);
     }
+  }
+
+  newBoatRegister(form : object){
+    this.http.post('http://localhost:3000/boat', form).subscribe(responseData => {
+      console.log('responseData', responseData)
+    });
   }
 }

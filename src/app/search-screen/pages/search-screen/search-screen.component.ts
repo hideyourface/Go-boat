@@ -12,7 +12,7 @@ export class SearchScreenComponent implements OnInit {
   public blocks: Blocks[] = [
     { title: 'search-screen',
       cols: '100%',
-      rows: '10% 90%',
+      rows: 'auto auto',
       justify: 'start',
       align: 'center',}
   ];

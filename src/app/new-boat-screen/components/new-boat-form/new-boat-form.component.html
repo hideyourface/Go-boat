@@ -64,9 +64,9 @@
         <input   class="text-input" type="text" placeholder="0" id="tirant" name="tirant" #tirant ngModel/>
       </div>
 
-      <div class="radio__container"  [hidden]="currentStep['name'] !== 'voilier'">
-        <input class="radio-input" type="checkbox" id="foil" name="foil" #foil ngModel/>
-        <label class="radio__label" for="foil"> Foil </label>
+      <div class="radio__container"  *ngIf="currentStep['number'] === 3">
+        <input  *ngIf="currentStep['number'] === 3" class="radio-input" type="checkbox" id="foil" name="foil" #foil ngModel/>
+        <label  *ngIf="currentStep['number'] === 3" class="radio__label" for="foil"> Foil </label>
       </div>
 
       <div class="radio__container">
@@ -80,9 +80,12 @@
       </div>
 
     </div>
+    <div [hidden]="currentStep['name'] !== 'confirmation'" class="input__container">
+        <app-register-confirm *ngIf="currentStep['name'] === 'confirmation'" [data]="registerBoat"></app-register-confirm>
+    </div>
 
+    <button class="btn-primary" [ngClass]="{'btn-right' : currentStep['number'] !==0 && mobile === false}" *ngIf="currentStep['name'] !== 'confirmation'" type="button" (click)="nextStep(registerBoat)"> {{currentStep['button']}} </button>
+    <button class="btn-primary"  [ngClass]="{'btn-right' : mobile === false}" *ngIf="currentStep['name'] === 'confirmation'" type="submit" > Submit </button>
 
   </div>
-  <button class="btn-primary" *ngIf="currentStep['name'] !== 'confirmation'" type="button" (click)="nextStep(registerBoat)"> {{currentStep['button']}} </button>
-   <button *ngIf="currentStep['name'] === 'confirmation'" type="submit" > Submit </button>
   </form>

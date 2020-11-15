@@ -13,7 +13,8 @@ import { SearchResultsListComponent } from './search-screen/container/search-res
 import { NewBoatFormContainerComponent } from './new-boat-screen/container/new-boat-form/new-boat-form-container.component';
 import { NewBoatSideImageComponent } from './new-boat-screen/components/new-boat-side-image/new-boat-side-image.component';
 import { NewBoatFormComponent } from './new-boat-screen/components/new-boat-form/new-boat-form.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterConfirmComponent } from './new-boat-screen/components/register-confirm/register-confirm.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http'
     SearchResultsListComponent,
     NewBoatFormContainerComponent,
     NewBoatSideImageComponent,
-    NewBoatFormComponent
+    NewBoatFormComponent,
+    RegisterConfirmComponent
   ],
   imports: [
     BrowserModule,

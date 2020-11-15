@@ -5,6 +5,8 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { RegisterBoatService } from 'src/app/shared/services/register-boat.service'
 import { DeviceControllerService } from 'src/app/shared/services/device-controller.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-boat-form-container',
@@ -55,7 +57,7 @@ export class NewBoatFormContainerComponent implements OnInit {
 
 
 
-  constructor(private registration : RegisterBoatService, private deviceService : DeviceControllerService) { }
+  constructor(private registration : RegisterBoatService, private deviceService : DeviceControllerService, private router : Router) { }
 
   ngOnInit(): void {
     this.formStep = this.registration.currentStep.subscribe(value => this.currentStep = value);
@@ -84,4 +86,14 @@ export class NewBoatFormContainerComponent implements OnInit {
     }
   }
 
+  goBack(){
+    this.registration.setCurrentStep(-1);
+    this.router.navigate(['/home'], { skipLocationChange: true});
+  }
+
+  onFormSubmitted(bool : boolean){
+    if(bool){
+      this.goBack();
+    }
+  }
 }

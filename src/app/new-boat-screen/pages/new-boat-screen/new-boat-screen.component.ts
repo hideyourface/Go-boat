@@ -11,7 +11,7 @@ import { DeviceControllerService } from 'src/app/shared/services/device-controll
 export class NewBoatScreenComponent implements OnInit {
   public blocks: Blocks[] = [
     { title: 'new-boat',
-      cols: '100%',
+      cols: 'auto auto',
       rows: '100%',
       justify: 'start',
       align: 'center',}
@@ -44,7 +44,7 @@ export class NewBoatScreenComponent implements OnInit {
   }
 
   adaptGrid(){
-    this.blocks[this.blocks.findIndex(element => element.title === 'new-boat')].cols = '55% 45%';
+    this.blocks[this.blocks.findIndex(element => element.title === 'new-boat')].cols = '65% 35%';
   }
 
 

@@ -1,0 +1,16 @@
+<div class="confirm__container">
+<h2> Congratulations! Votre inscription est presque terminée. </h2>
+<h3 > Voici vos données: </h3>
+  <p style="margin-top: 0.3em;"> Vous êtes un <span class="style_primary">{{form['userType']}} </span></p>
+  <p> Type de bateau choisi: <span class="style_primary">{{form['boatType']}}</span></p>
+  <div *ngIf="form['boatType'] === 'voilier' || form['boatType'] === 'catamaran'">
+    <p> Longeur: <span class="style_primary">{{form['longeur']}}</span></p>
+    <p> Largeur: <span class="style_primary">{{form['largeur']}}</span></p>
+    <p> Tirant d'eau: <span class="style_primary">{{form['tirant']}}</span></p>
+    <p *ngIf="form['boatType'] === 'voilier'"> Foil: <span class="style_primary">{{form['foil']}}</span></p>
+    <p> Equipage: <span class="style_primary">{{form['equipage']}}</span></p>
+    <p> Annexe: <span class="style_primary">{{form['annexe']}}</span></p>
+  </div>
+<h4 style="margin-top: 1.2em;">
+    En cliquant sur le bouton, votre bateau sera enregistré avec les informations ci dessu et vous serez redirigé vers la page d'accueil. </h4>
+</div>

@@ -21,6 +21,160 @@
       "equipage": true,
       "annexe": "",
       "id": 2
+    },
+    {
+      "userType": "particulier",
+      "boatType": "catamaran",
+      "longueur": "10",
+      "largeur": "6",
+      "tirant": "3",
+      "foil": "",
+      "equipage": true,
+      "annexe": "",
+      "id": 3
+    },
+    {
+      "userType": "professionel",
+      "boatType": "jet-ski",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 4
+    },
+    {
+      "userType": "professionel",
+      "boatType": "peniche",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 5
+    },
+    {
+      "userType": "particulier",
+      "boatType": "bateau-moteur",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 6
+    },
+    {
+      "userType": "professionel",
+      "boatType": "peniche",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 7
+    },
+    {
+      "userType": "professionel",
+      "boatType": "yatch",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 8
+    },
+    {
+      "userType": "particulier",
+      "boatType": "bateau-moteur",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 9
+    },
+    {
+      "userType": "professionel",
+      "boatType": "bateau-moteur",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 10
+    },
+    {
+      "userType": "professionel",
+      "boatType": "semi-rigide",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 11
+    },
+    {
+      "userType": "particulier",
+      "boatType": "voilier",
+      "longueur": "18",
+      "largeur": "6",
+      "tirant": "7",
+      "foil": true,
+      "equipage": true,
+      "annexe": true,
+      "id": 12
+    },
+    {
+      "userType": "particulier",
+      "boatType": "voilier",
+      "longueur": "5",
+      "largeur": "3",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 13
+    },
+    {
+      "userType": "particulier",
+      "boatType": "jet-ski",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 14
+    },
+    {
+      "userType": "professionel",
+      "boatType": "voilier",
+      "longueur": "12",
+      "largeur": "3",
+      "tirant": "4",
+      "foil": true,
+      "equipage": true,
+      "annexe": "",
+      "id": 15
+    },
+    {
+      "userType": "particulier",
+      "boatType": "voilier",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "foil": true,
+      "equipage": true,
+      "annexe": true,
+      "id": 16
     }
   ]
 }
