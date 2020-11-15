@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mock-server" : "json-server mock-data.json --routes mock-routes.json --no-cors=false"
+    "mock-server": "json-server mock-data.json --routes mock-routes.json --no-cors=false"
   },
   "private": true,
   "dependencies": {
@@ -26,11 +26,12 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@ionic/angular": "^5.4.4",
+    "firebase": "^7.0.0 || ^8.0.0",
     "ngx-device-detector": "^2.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3",
-    "firebase": "^7.0.0 || ^8.0.0"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1100.1",
@@ -56,6 +57,7 @@
     "fuzzy": "^0.1.3",
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
-    "open": "^7.0.3"
+    "open": "^7.0.3",
+    "@ionic/angular-toolkit": "latest"
   }
 }

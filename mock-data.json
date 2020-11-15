@@ -175,6 +175,16 @@
       "equipage": true,
       "annexe": true,
       "id": 16
+    },
+    {
+      "userType": "particulier",
+      "boatType": "bateau-moteur",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 17
     }
   ]
 }

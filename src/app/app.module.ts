@@ -14,7 +14,8 @@ import { NewBoatFormContainerComponent } from './new-boat-screen/container/new-b
 import { NewBoatSideImageComponent } from './new-boat-screen/components/new-boat-side-image/new-boat-side-image.component';
 import { NewBoatFormComponent } from './new-boat-screen/components/new-boat-form/new-boat-form.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterConfirmComponent } from './new-boat-screen/components/register-confirm/register-confirm.component'
+import { RegisterConfirmComponent } from './new-boat-screen/components/register-confirm/register-confirm.component';
+import { IonicModule } from '@ionic/angular'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { RegisterConfirmComponent } from './new-boat-screen/components/register-
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

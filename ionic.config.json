@@ -1,0 +1,11 @@
+
+{
+  "defaultProject": "click-and-boat",
+  "projects": {
+    "click-and-boat": {
+      "name": "click-and-boat",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
+}
