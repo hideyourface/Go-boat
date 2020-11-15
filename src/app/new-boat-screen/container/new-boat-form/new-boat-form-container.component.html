@@ -1,0 +1,30 @@
+ <div class="grid__container"  *ngFor="let block of blocks" [class]="block.title"
+      [style.grid-template-columns]="block.cols"
+      [style.grid-template-rows]="block.rows">
+      <ng-container *ngFor="let item of items"
+      [style.grid-column-start]="item.grid_column_start"
+      [style.grid-column-end]="item.grid_column_end"
+      [style.grid-row-start]="item.grid_row_start"
+      [style.grid-row-end]="item.grid_row_end">
+
+        <a [routerLink]="['/home']" *ngIf="item.title === 'header-link'" class="light-link" >
+          <fa-icon [icon]="faChevronLeft" size="3x"></fa-icon>
+          <span class="light-link__span">Retour</span>
+        </a>
+
+        <ng-container *ngIf="item.title === 'header-title'">
+          <div class="form-container__header" [ngClass]="{'form-container__header--steps' : currentStep['number'] !== 0 }">
+            <p *ngIf="currentStep['number'] !== 0">ETAPE {{currentStep['number']}}/3</p>
+            <h3> {{currentStep['title']}} </h3>
+            <h2 *ngIf="currentStep['number'] === 0"> sur Click<span class="style_warning">&</span>Boat </h2>
+          </div >
+        </ng-container>
+
+        <app-new-boat-form [currentStep]="currentStep" (changeStep)="nextStep()" *ngIf="item.title === 'form'"></app-new-boat-form>
+
+
+        <a *ngIf="item.title === 'footer-link'" class="light-link" >
+          <span class="light-link__span footer__link">Footer</span>
+        </a>
+</ng-container>
+</div>

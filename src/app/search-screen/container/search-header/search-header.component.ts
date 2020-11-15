@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Blocks } from '../../interfaces/blocks.Blocks';
-import { Items } from '../../interfaces/items.Items';
-import { DeviceControllerService} from '../../services/device-controller.service'
+import { Blocks } from 'src/app/shared/interfaces/blocks.Blocks';
+import { Items } from 'src/app/shared/interfaces/items.Items';
+
 
 @Component({
   selector: 'app-search-header',
@@ -9,6 +9,7 @@ import { DeviceControllerService} from '../../services/device-controller.service
   styleUrls: ['./search-header.component.scss']
 })
 export class SearchHeaderComponent implements OnInit {
+
 
   constructor() { }
 

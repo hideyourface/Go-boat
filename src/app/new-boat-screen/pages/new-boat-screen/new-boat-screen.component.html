@@ -1,1 +1,15 @@
-<p>new-boat-screen works!</p>
+<div class="grid__container" *ngFor="let block of blocks"
+  [class]="block.title"
+  [style.grid-template-columns]="block.cols"
+  [style.grid-template-rows]="block.rows">
+  <ng-container *ngFor="let item of items"
+    [style.grid-column-start]="item.grid_column_start"
+    [style.grid-column-end]="item.grid_column_end"
+    [style.grid-row-start]="item.grid_row_start"
+    [style.grid-row-end]="item.grid_row_end" >
+
+    <app-new-boat-form-container *ngIf="item.title === 'form'"> </app-new-boat-form-container>
+    <app-new-boat-side-image *ngIf="item.title === 'img'"></app-new-boat-side-image>
+
+  </ng-container>
+</div>

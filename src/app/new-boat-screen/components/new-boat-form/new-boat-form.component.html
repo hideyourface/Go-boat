@@ -1,0 +1,88 @@
+<form (ngSubmit)="onSubmit(registerBoat)" #registerBoat="ngForm" >
+  <div style="display: block;">
+    <div [hidden]="currentStep['name'] !== 'intro'" class="input__container">
+      <h4> Je suis: </h4>
+        <div class="radio__container">
+          <input class="radio-input" type="radio" value="0" id="userType" name="userType" #userType ngModel/>
+          <label class="radio__label" for="userType"> Un particulier </label>
+        </div>
+        <div class="radio__container">
+          <input class="radio-input"  type="radio" value="1" id="userType" name="userType" #userType ngModel/>
+          <label class="radio__label"  for="userType"> Un professionel </label>
+        </div>
+    </div>
+
+    <div [hidden]="currentStep['name'] !== 'chooseType'" class="input__container">
+      <div class="radio__container">
+        <input  class="radio-input"  type="radio" value="Voilier" id="boatType" name="boatType" #boatType ngModel/>
+        <label class="radio__label"  for="boatType"> Voilier </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="Catamaran" id="boatType" name="boatType" #boatType ngModel/>
+        <label  class="radio__label" for="boatType"> Catamaran </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"   type="radio" value="Bateau moteur" id="boatType" name="boatType" #boatType ngModel/>
+        <label  class="radio__label" for="boatType"> Bateau moteur </label>
+      </div>
+
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="Semi-rigide" id="boatType" name="boatType" #boatType ngModel/>
+        <label class="radio__label"  for="boatType"> Semi-rigide </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="Péniche" id="boatType" name="boatType" #boatType ngModel/>
+        <label class="radio__label"  for="boatType"> Péniche </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="Jet-Ski" id="boatType" name="boatType" #boatType ngModel/>
+        <label class="radio__label"  for="boatType"> Jet-Ski </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input"  type="radio" value="Yatch" id="boatType" name="boatType" #boatType ngModel/>
+        <label class="radio__label"  for="boatType"> Yatch </label>
+      </div>
+    </div>
+
+    <div [hidden]="currentStep['name'] !== 'catamaran' && currentStep['name'] !== 'sailBoat'"  class="input__container">
+      <div class="text-input__container">
+        <label class="text-input__label"   for="Longueur"> Longueur </label>
+        <input class="text-input" type="text" placeholder="0" id="Longueur" name="Longueur" #Longueur ngModel/>
+      </div>
+      <div class="text-input__container">
+        <label  class="text-input__label" for="Largeur"> Largeur </label>
+        <input  class="text-input"  type="text" placeholder="0" id="Largeur" name="Largeur" #Largeur ngModel/>
+      </div>
+      <div class="text-input__container">
+        <label  class="text-input__label" for="Tirant"> Tirant d'eau </label>
+        <input   class="text-input" type="text" placeholder="0" id="Tirant" name="Tirant" #Tirant ngModel/>
+      </div>
+
+      <div class="radio__container"  [hidden]="currentStep['name'] === 'sailBoat'">
+        <input class="radio-input" type="checkbox" id="Foil" name="Foil" #Foil ngModel/>
+        <label class="radio__label" for="userType"> Foil </label>
+      </div>
+
+      <div class="radio__container">
+        <input class="radio-input" type="checkbox" id="Equipage" name="Equipage" #Equipage ngModel/>
+        <label class="radio__label"  for="Equipage"> Equipage </label>
+      </div>
+
+      <div class="radio__container">
+        <label  class="radio-input"  for="Annexe"> Annexe </label>
+        <input  class="radio-input" type="checkbox" id="Annexe" name="Annexe" #Annexe ngModel/>
+      </div>
+
+    </div>
+
+
+  </div>
+  <button class="btn-primary" *ngIf="currentStep['name'] !== 'confirmation'" type="button" (click)="nextStep(registerBoat)"> {{currentStep['button']}} </button>
+   <button *ngIf="currentStep['name'] === 'confirmation'" type="submit" > Submit </button>
+  </form>

@@ -1,7 +1,7 @@
 <div  *ngFor="let block of blocks" [class]="block.title"
       [style.grid-template-columns]="block.cols"
       [style.grid-template-rows]="block.rows"
-      class="main-header"
+      class="grid__container"
       >
       <div *ngFor="let item of items"
       [style.grid-column-start]="item.grid_column_start"
@@ -11,7 +11,7 @@
       [class]="item.title"
       class="main-header__item">
         <img *ngIf="item.title === 'logo'" src="../../../../assets/img/logo.png" height="30px">
-        <a class="main-header__item-rigth"  href="#">
+        <a class="main-header__item-rigth"  [routerLink]="['/new-boat']">
           <fa-icon class="main-header__item-rigth" *ngIf="item.title === 'mobile-menu'" [icon]="faPlusSquare"></fa-icon>
           <span class="main-header__item-rigth" *ngIf="item.title === 'desktop-menu'"> Add your boat </span>
          </a>
