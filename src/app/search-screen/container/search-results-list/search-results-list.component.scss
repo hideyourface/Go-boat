@@ -1,11 +1,12 @@
 @import '../../../../assets/styles/theme.scss';
+
 .search__boat-card{
   float: left;
   width: 30%;
   height: 280px;
   margin: 10px 1%;
   border-radius: 5px;
-  -moz-box-shadow: 0 0 3px 3px color(grey,   heavy-shadow);
+  -moz-box-shadow: 0 0 3px 3px  color(grey,   heavy-shadow);
   -webkit-box-shadow: 0 0 3px 3px color(grey,  heavy-shadow);
   box-shadow: 0 0 3px 3px color(grey,  heavy-shadow);
   .boat-card__img{
@@ -36,7 +37,34 @@
   }
   .boat-card__info{
     padding: 10px;
+    .results__label{
+      text-transform: uppercase;
+      display: inline-block;
+      width: auto;
+      margin-right: 3px;
+      font-size: x-small;
+    }
+    .results__user, .results__label{
+      color: color(grey,   light-text);
+    }
+    .results__user{
+      text-transform: capitalize;
+    }
+    .results__info{
+      font-size: x-small;
+    }
+    .results__boatType{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: large;
+    }
+    .extra-info__container{
+      width: 46%;
+      margin-right: 4%;
+      float: left;
+    }
   }
+
 }
 
 @media only screen and (max-width: 795px) {

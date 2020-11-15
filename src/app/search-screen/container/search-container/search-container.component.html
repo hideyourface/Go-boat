@@ -1,12 +1,14 @@
 <div class="search__container">
-  <p (click)="searchForm.hidden = !searchForm.hidden">  Paramètres de recherche</p>
+  <h3 class="search__container--title" (click)="searchForm.hidden = !searchForm.hidden">
+    <fa-icon  [icon]="faSearch"></fa-icon>
+    Paramètres de recherche</h3>
   <div  #searchForm [hidden]="isMobile === true">
     <form  #searchBoat="ngForm" >
     <div class="search__block">
       <p (click)="userTypeContainer.hidden = !userTypeContainer.hidden">
-        <fa-icon [icon]="faChevronDown" [hidden]="userTypeContainer.hidden"></fa-icon>
-        <fa-icon [icon]="faChevronRight" [hidden]="!userTypeContainer.hidden"></fa-icon>
+        <fa-icon class="style_warning" [icon]="faUser"></fa-icon>
         Type de loueur
+
       </p>
       <div #userTypeContainer >
           <div class="radio__container">
@@ -21,8 +23,7 @@
     </div>
   <div class="search__block">
     <p (click)="boatTypeContainer.hidden = !boatTypeContainer.hidden">
-      <fa-icon [icon]="faChevronDown" [hidden]="!boatTypeContainer.hidden"></fa-icon>
-      <fa-icon [icon]="faChevronRight"  [hidden]="boatTypeContainer.hidden"></fa-icon>
+      <fa-icon class="style_warning" [icon]="faShip"></fa-icon>
       Type de bateau</p>
     <div #boatTypeContainer >
       <div class="radio__container">
@@ -65,8 +66,7 @@
 
   <div class="search__block" [hidden]="boatType.value !==  'voilier' && boatType.value !==  'catamaran'">
     <p (click)="extraInfo.hidden = !extraInfo.hidden">
-      <fa-icon [icon]="faChevronRight" [hidden]="extraInfo.hidden"></fa-icon>
-      <fa-icon [icon]="faChevronDown" [hidden]="!extraInfo.hidden"></fa-icon>
+      <fa-icon class="style_warning" [icon]="faAnchor"></fa-icon>
       Informations adjuntives</p>
     <div #extraInfo>
       <div class="text-input__container" >

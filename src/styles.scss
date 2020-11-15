@@ -21,6 +21,11 @@ p, h2, h3, h4, h5, h6{
   color: color(warning, base);
 }
 
+.style_primary{
+  color: color(primary, base);
+}
+
+
 /* structure */
 
 .grid__container{
@@ -136,6 +141,7 @@ a:hover{
 .text-input__label {
   font-size: small;
   margin-right: 10px;
+
 }
 
 .text-input{
@@ -144,26 +150,24 @@ a:hover{
   width: 150px;
   margin-right: 20px;
   margin-top: 2em;
-  -moz-box-shadow: 0 0 3px 3px color(grey, heavy-shadow);
-  -webkit-box-shadow: 0 0 3px 3px color(grey, heavy-shadow);
-  box-shadow: 0 0 3px 3px color(grey, heavy-shadow);
+
   padding: 0.8em;
   border: 1px solid color(grey,  heavy-shadow);
   border-radius: 2px;
 }
 .text-input:hover {
-  border:  1px solid color(grey, heavyer-shadow);
-  -moz-box-shadow: 0 0 3px 3px color(grey,   heavyer-shadow);
-  -webkit-box-shadow: 0 0 3px 3px color(grey,  heavyer-shadow);
-  box-shadow: 0 0 3px 3px color(grey,  heavyer-shadow);
+  border:  1px solid color(grey, light-shadow);
+  -moz-box-shadow: 0 0 3px 3px color(grey,   light-shadow);
+  -webkit-box-shadow: 0 0 3px 3px color(grey,  light-shadow);
+  box-shadow: 0 0 3px 3px color(grey,  light-shadow);
 }
 
 .text-input:focus {
   outline: none;
-  border:  1px solid color(grey, heavyer-shadow);
-  -moz-box-shadow: 0 0 3px 3px color(grey,   heavyer-shadow);
-  -webkit-box-shadow: 0 0 3px 3px color(grey,  heavyer-shadow);
-  box-shadow: 0 0 3px 3px color(grey,  heavyer-shadow);
+  border:  1px solid color(grey, light-shadow);
+  -moz-box-shadow: 0 0 3px 3px color(grey,   light-shadow);
+  -webkit-box-shadow: 0 0 3px 3px color(grey,  light-shadow);
+  box-shadow: 0 0 3px 3px color(grey,  light-shadow);
 }
 
 }

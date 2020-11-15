@@ -8,9 +8,40 @@
       </div>
       <div class="boat-card__info">
 
-          <p>{{boat['boatType']}}</p>
-          <label>LOUEUR </label>
-          <span>{{boat['userType']}}</span>
+          <p class="results__boatType">{{boat['boatType']}}</p>
+          <div class="extra-info__container">
+            <label class="results__label">mesures :</label>
+            <span class="results__info" >
+              <span *ngIf="boat['longueur'] !== ''">{{boat['longueur']}} m long.</span>
+              <span *ngIf="boat['largeur'] !== ''">{{boat['largeur']}} m larg.</span>
+              </span>
+          </div>
+
+          <div class="extra-info__container">
+            <label class="results__label">tirant :</label>
+            <span class="results__info">{{boat['tirant']}}</span>
+          </div>
+
+          <div class="extra-info__container">
+            <label class="results__label">foil :</label>
+            <span class="results__info"  *ngIf="boat['equipage'] === true">Oui</span>
+          </div>
+
+
+          <div class="extra-info__container">
+            <label class="results__label">equipage :</label>
+            <span class="results__info" *ngIf="boat['equipage'] === true">Oui</span>
+          </div>
+
+          <div class="extra-info__container">
+            <label class="results__label">annexe :</label>
+            <span class="results__info" *ngIf="boat['annexe'] === true">Oui</span>
+          </div>
+
+          <div >
+          <label class="results__label">LOUEUR :</label>
+          <span class="results__user">{{boat['userType']}}</span>
+          </div>
       </div>
     </div>
 

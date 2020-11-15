@@ -14,7 +14,7 @@
 
         <ng-container *ngIf="item.title === 'header-title'">
           <div class="form-container__header" [ngClass]="{'form-container__header--steps' : currentStep['number'] !== 0 }">
-            <p *ngIf="currentStep['number'] !== 0">ETAPE {{currentStep['number']}}/3</p>
+            <p *ngIf="currentStep['number'] !== 0">ETAPE {{currentStep['number']}}/4</p>
             <h3> {{currentStep['title']}} </h3>
             <h2 *ngIf="currentStep['number'] === 0"> sur Click<span class="style_warning">&</span>Boat </h2>
           </div >
