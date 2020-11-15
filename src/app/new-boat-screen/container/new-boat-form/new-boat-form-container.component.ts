@@ -61,7 +61,6 @@ export class NewBoatFormContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.formStep = this.registration.currentStep.subscribe(value => this.currentStep = value);
-    console.log('this.currentStep --->', this.currentStep);
   }
 
   ngOnDestroy(){
@@ -69,7 +68,6 @@ export class NewBoatFormContainerComponent implements OnInit {
   }
 
   nextStep(f : object){
-    console.log('current ---> ',  this.currentStep['number']);
     if(this.currentStep['name'] !== 'confirmation'){
         if(this.currentStep['number'] === 1 && f['boatType'] === 'voilier'){
           this.registration.setCurrentStep(2);

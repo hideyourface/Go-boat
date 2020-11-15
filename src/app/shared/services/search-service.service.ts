@@ -17,7 +17,6 @@ export class SearchServiceService {
   buildSearchQuery(values : NgForm, category : string){
     this.query = '';
     let controls = values['form']['value'];
-    console.log('event -->', values['form']);
     for (const key in values['form']['value']) {
      if(`${values['form']['value'][key]}` !== '' && `${values['form']['value'][key]}` !== 'false'){
 
@@ -37,7 +36,6 @@ export class SearchServiceService {
 
   getBoatsList(query) {
     let url = 'http://localhost:3000/boat?'  + query + '_sort=id&_order=desc';
-    console.log('url --> ', url);
     this.http.get(url)
       .pipe(map(responseData => {
         const boatsArray = [];
@@ -50,8 +48,6 @@ export class SearchServiceService {
       }))
       .subscribe(boatsList => {
         this.boatsList.next(boatsList);
-
-        console.log('boatsList', boatsList);
       });
   };
 

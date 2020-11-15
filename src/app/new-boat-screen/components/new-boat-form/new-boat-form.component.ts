@@ -28,13 +28,11 @@ export class NewBoatFormComponent implements OnInit {
 
   onSubmit(f : NgForm){
     this.form = f.value;
-    console.log('this.form', this.form );
     this.registration.newBoatRegister(this.form);
     this.formSubmitted.emit(true);
   }
 
   nextStep(f : NgForm){
-    console.log('f.value', f.value );
     this.changeStep.emit(f.value);
   }
 }

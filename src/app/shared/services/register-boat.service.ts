@@ -52,7 +52,6 @@ export class RegisterBoatService {
 
   newBoatRegister(form : object){
     this.http.post('http://localhost:3000/boat', form).subscribe(responseData => {
-      console.log('responseData', responseData)
     });
   }
 }
