@@ -19,6 +19,7 @@ export class SearchContainerComponent implements OnInit {
   public faAnchor = faAnchor;
 
   constructor(private deviceService : DeviceControllerService, private search : SearchServiceService) {
+    //detect device
     if(!this.deviceService.deviceService.isMobile()){
       this.isMobile = false;
     }
@@ -28,6 +29,7 @@ export class SearchContainerComponent implements OnInit {
   }
 
   buildSearchQuery(values : NgForm, category : string){
+    //call the service to build the Query and add or remove parameters
     this.search.buildSearchQuery(values, category);
   }
 

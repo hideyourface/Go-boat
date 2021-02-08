@@ -1,5 +1,5 @@
 {
-  "name": "click-and-boat",
+  "name": "go-boat",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mock-server" : "json-server mock-data.json --routes mock-routes.json --no-cors=false"
+    "mock-server": "json-server mock-data.json --routes mock-routes.json --no-cors=false"
   },
   "private": true,
   "dependencies": {

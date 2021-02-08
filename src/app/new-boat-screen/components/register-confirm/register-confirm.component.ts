@@ -13,8 +13,6 @@ export class RegisterConfirmComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.data.value;
-    console.log('this form ----> ', this.form);
-
   }
 
 }

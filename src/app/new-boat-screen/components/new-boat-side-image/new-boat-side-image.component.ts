@@ -17,8 +17,6 @@ constructor(private registration : RegisterBoatService) { }
 
   ngOnInit(): void {
     this.formStep = this.registration.currentStep.subscribe(value => this.currentStep = value);
-    console.log('this.currentStep --->', this.currentStep);
-
   }
 
   ngOnDestroy(){

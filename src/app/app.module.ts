@@ -7,7 +7,6 @@ import { SearchScreenComponent } from './search-screen/pages/search-screen/searc
 import { NewBoatScreenComponent } from './new-boat-screen/pages/new-boat-screen/new-boat-screen.component';
 import { MainHeaderComponent } from './shared/container/main-header/main-header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SearchHeaderComponent } from './search-screen/container/search-header/search-header.component';
 import { SearchContainerComponent } from './search-screen/container/search-container/search-container.component';
 import { SearchResultsListComponent } from './search-screen/container/search-results-list/search-results-list.component';
 import { NewBoatFormContainerComponent } from './new-boat-screen/container/new-boat-form/new-boat-form-container.component';
@@ -21,7 +20,6 @@ import { RegisterConfirmComponent } from './new-boat-screen/components/register-
     SearchScreenComponent,
     NewBoatScreenComponent,
     MainHeaderComponent,
-    SearchHeaderComponent,
     SearchContainerComponent,
     SearchResultsListComponent,
     NewBoatFormContainerComponent,

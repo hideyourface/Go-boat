@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchScreenComponent } from './search-screen/pages/search-screen/search-screen.component'
 import { NewBoatScreenComponent } from './new-boat-screen/pages/new-boat-screen/new-boat-screen.component'
-import { from } from 'rxjs';
 
 const routes: Routes = [
   {

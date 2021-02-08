@@ -175,6 +175,26 @@
       "equipage": true,
       "annexe": true,
       "id": 16
+    },
+    {
+      "userType": "particulier",
+      "boatType": "voilier",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "equipage": "",
+      "annexe": "",
+      "id": 17
+    },
+    {
+      "userType": "particulier",
+      "boatType": "catamaran",
+      "longueur": "",
+      "largeur": "",
+      "tirant": "",
+      "equipage": true,
+      "annexe": "",
+      "id": 18
     }
   ]
 }

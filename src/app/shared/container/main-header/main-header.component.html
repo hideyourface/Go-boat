@@ -1,19 +1,30 @@
-<div  *ngFor="let block of blocks" [class]="block.title"
-      [style.grid-template-columns]="block.cols"
-      [style.grid-template-rows]="block.rows"
-      class="grid__container"
-      >
-      <div *ngFor="let item of items"
-      [style.grid-column-start]="item.grid_column_start"
-      [style.grid-column-end]="item.grid_column_end"
-      [style.grid-row-start]="item.grid_row_start"
-      [style.grid-row-end]="item.grid_row_end"
-      [class]="item.title"
-      class="main-header__item">
-        <img *ngIf="item.title === 'logo'" src="../../../../assets/img/logo.png" height="30px">
-        <a class="main-header__item-rigth"  [routerLink]="['/new-boat']">
-          <fa-icon class="main-header__item-rigth" *ngIf="item.title === 'mobile-menu'" [icon]="faPlusSquare"></fa-icon>
-          <span class="main-header__item-rigth" *ngIf="item.title === 'desktop-menu'"> Ajouter un bateau </span>
-         </a>
-      </div>
+<!-- Loop blocks -->
+<div *ngFor="let block of blocks"
+  [class]="block.title"
+  [style.grid-template-columns]="block.cols"
+  [style.grid-template-rows]="block.rows"
+  class="grid__container">
+  <!-- Loop items in blocks -->
+  <div *ngFor="let item of items"
+    [style.grid-column-start]="item.grid_column_start"
+    [style.grid-column-end]="item.grid_column_end"
+    [style.grid-row-start]="item.grid_row_start"
+    [style.grid-row-end]="item.grid_row_end"
+    [class]="item.title"
+    class="main-header__item">
+    <!-- Logo -->
+    <span class="main-header__logo" *ngIf="item.title === 'logo'">
+      <fa-icon class="main-header__logo-pink" [icon]="faAnchor"></fa-icon>
+      <span> Go <span class="main-header__logo-pink">B</span>oat</span>
+    </span>
+    <!-- new boat button -->
+    <a class="main-header__item-rigth" [routerLink]="['/new-boat']">
+      <fa-icon class="main-header__item-rigth"
+        *ngIf="item.title === 'mobile-menu'"
+        [icon]="faPlusSquare" ></fa-icon>
+      <span class="main-header__item-rigth" *ngIf="item.title === 'desktop-menu'">
+        Ajouter un bateau
+      </span>
+    </a>
+  </div>
 </div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "click-and-boat": {
+    "go-boat": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/click-and-boat",
+            "outputPath": "dist/go-boat",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "click-and-boat:build"
+            "browserTarget": "go-boat:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "click-and-boat:build:production"
+              "browserTarget": "go-boat:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "click-and-boat:build"
+            "browserTarget": "go-boat:build"
           }
         },
         "test": {
@@ -114,18 +114,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "click-and-boat:serve"
+            "devServerTarget": "go-boat:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "click-and-boat:serve:production"
+              "devServerTarget": "go-boat:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "click-and-boat",
+  "defaultProject": "go-boat",
   "cli": {
     "analytics": "6b9ea39d-16c9-4c15-858f-63ffb3fcbe40"
   }
