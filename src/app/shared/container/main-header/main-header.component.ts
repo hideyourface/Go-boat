@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Blocks } from '../../interfaces/blocks.Blocks';
 import { Items } from '../../interfaces/items.Items';
 import { DeviceControllerService} from '../../services/device-controller.service'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faAnchor, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-main-header',
@@ -22,13 +22,12 @@ export class MainHeaderComponent implements OnInit {
     {
       title : 'logo',
       grid_column_start: 1,
-      grid_column_end: 2,
+      grid_column_end: 3,
       grid_row_start: 1,
       grid_row_end: 1,
     },
     {
       title : 'mobile-menu',
-
       grid_column_start: 3,
       grid_column_end: 3,
       grid_row_start: 1,
@@ -44,7 +43,7 @@ export class MainHeaderComponent implements OnInit {
   ];
 
   public faPlusSquare = faPlusCircle;
-
+  public faAnchor = faAnchor;
   constructor(private deviceService : DeviceControllerService) {
     if(this.deviceService.deviceService.isTablet() || this.deviceService.deviceService.isDesktop()) {
       this.adaptGrid();

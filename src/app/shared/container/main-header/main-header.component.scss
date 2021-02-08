@@ -1,4 +1,7 @@
 
+/* Palette global definition */
+@import '../../../../assets/styles/theme.scss';
+
   .main-header__item {
     padding: 10px;
   }
@@ -6,4 +9,13 @@
     float: right;
     margin-right: 5px;
     margin-top: 3px;
+  }
+
+
+  .main-header__logo {
+    width: 50%;
+  }
+
+  .main-header__logo-pink {
+    color : color(warning, base);
   }

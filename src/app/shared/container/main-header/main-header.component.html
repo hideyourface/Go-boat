@@ -10,7 +10,10 @@
       [style.grid-row-end]="item.grid_row_end"
       [class]="item.title"
       class="main-header__item">
-        <img *ngIf="item.title === 'logo'" src="../../../../assets/img/logo.png" height="30px">
+      <span class="main-header__logo" *ngIf="item.title === 'logo'">
+        <fa-icon  class="main-header__logo-pink" [icon]="faAnchor"></fa-icon>
+        <span> Go <span class="main-header__logo-pink">B</span>oat</span>
+      </span>
         <a class="main-header__item-rigth"  [routerLink]="['/new-boat']">
           <fa-icon class="main-header__item-rigth" *ngIf="item.title === 'mobile-menu'" [icon]="faPlusSquare"></fa-icon>
           <span class="main-header__item-rigth" *ngIf="item.title === 'desktop-menu'"> Ajouter un bateau </span>
