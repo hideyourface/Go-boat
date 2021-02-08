@@ -5,6 +5,6 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   providedIn: 'root'
 })
 export class DeviceControllerService {
-
+  //this service will be detect the device type
   constructor(public deviceService : DeviceDetectorService) { }
 }
