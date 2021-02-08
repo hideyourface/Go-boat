@@ -44,7 +44,9 @@ export class MainHeaderComponent implements OnInit {
 
   public faPlusSquare = faPlusCircle;
   public faAnchor = faAnchor;
+
   constructor(private deviceService : DeviceControllerService) {
+    //check for device and adapt the grid
     if(this.deviceService.deviceService.isTablet() || this.deviceService.deviceService.isDesktop()) {
       this.adaptGrid();
     } else {

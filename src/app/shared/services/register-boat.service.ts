@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterBoatService {
+  //list of registration step
   public steps: object[] = [{
     name : 'intro',
     title: 'Louer son bateau',
@@ -39,6 +39,7 @@ export class RegisterBoatService {
     }
   ];
 
+  //observable to handle the displey of current step
   public currentStep = new BehaviorSubject<object>(this.steps[0]);
   constructor(private http : HttpClient) { }
 

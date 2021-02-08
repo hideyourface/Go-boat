@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
 import { Subscription } from 'rxjs';
 import { SearchServiceService } from 'src/app/shared/services/search-service.service';
 @Component({
@@ -11,13 +9,14 @@ import { SearchServiceService } from 'src/app/shared/services/search-service.ser
 export class SearchResultsListComponent implements OnInit {
   public boatList : object[] = [];
   private boatListSubscription : Subscription;
-  private query = '';
+
   constructor(private search : SearchServiceService) {
     this.search.getBoatsList('');
 
   }
 
   ngOnInit(): void {
+    //subscription to boat list observable
     this.boatListSubscription = this.search.boatsList.subscribe(value =>{
       this.boatList = value;
     })
