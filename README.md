@@ -1,4 +1,6 @@
 # Boat
+Boat was a project for a fast search and app tool simulator in Angular. 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
 

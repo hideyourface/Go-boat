@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'click-and-boat'`, () => {
+  it(`should have as title 'go-boat'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('click-and-boat');
+    expect(app.title).toEqual('go-boat');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('click-and-boat app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('go-boat app is running!');
   });
 });
